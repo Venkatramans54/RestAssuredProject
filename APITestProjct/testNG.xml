@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="EmployeeAPI">
+	<listeners>
+		<listener class-name="utilities.ReportManager" />
+	</listeners>
+
+	<test name="EmployeeAPITest">
+		<classes>
+			<class name="testCases.GetAllEmployees" />
+		</classes>
+	</test>
+</suite>

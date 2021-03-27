@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [EmployeeAPI]">
+  <listeners>
+    <listener class-name="utilities.ReportManager"/>
+  </listeners>
+  <test name="EmployeeAPITest(failed)">
+    <classes>
+      <class name="testCases.GetAllEmployees">
+        <methods>
+          <include name="checkCookies"/>
+          <include name="getEmp"/>
+        </methods>
+      </class> <!-- testCases.GetAllEmployees -->
+    </classes>
+  </test> <!-- EmployeeAPITest(failed) -->
+</suite> <!-- Failed suite [EmployeeAPI] -->

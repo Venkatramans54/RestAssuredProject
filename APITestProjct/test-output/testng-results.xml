@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-03-21T07:11:33Z" name="Default suite" finished-at="2021-03-21T07:11:36Z" duration-ms="3611">
+    <groups>
+    </groups>
+    <test started-at="2021-03-21T07:11:33Z" name="Default test" finished-at="2021-03-21T07:11:36Z" duration-ms="3611">
+      <class name="testCases.UpdateEmployee">
+        <test-method is-config="true" signature="updateEmployee()[pri:0, instance:testCases.UpdateEmployee@31920ade]" started-at="2021-03-21T12:41:33Z" name="updateEmployee" finished-at="2021-03-21T12:41:36Z" duration-ms="3574" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateEmployee -->
+        <test-method signature="checkResponse()[pri:0, instance:testCases.UpdateEmployee@31920ade]" started-at="2021-03-21T12:41:36Z" name="checkResponse" finished-at="2021-03-21T12:41:36Z" duration-ms="11" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkResponse -->
+      </class> <!-- testCases.UpdateEmployee -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
