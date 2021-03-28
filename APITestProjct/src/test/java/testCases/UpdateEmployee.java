@@ -37,8 +37,10 @@ public class UpdateEmployee extends BaseClass {
 	
 	@Test
 	public void checkResponse() {
+		log.info("UpdateEmployee Test");
 		String responseBody=response.getBody().asString();
 		//Assert.assertEquals(responseBody.contains(empID), true);
+		log.info("Response Body=> "+responseBody);
 		Assert.assertEquals(responseBody.contains(name), true);
 		Assert.assertEquals(responseBody.contains(salary), true);
 		Assert.assertEquals(responseBody.contains(age), true);

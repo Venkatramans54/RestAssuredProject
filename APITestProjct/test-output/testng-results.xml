@@ -1,21 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="1" failed="0" skipped="0">
+<testng-results total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-21T07:11:33Z" name="Default suite" finished-at="2021-03-21T07:11:36Z" duration-ms="3611">
+  <suite started-at="2021-03-28T14:32:30Z" name="Default suite" finished-at="2021-03-28T14:32:33Z" duration-ms="3638">
     <groups>
     </groups>
-    <test started-at="2021-03-21T07:11:33Z" name="Default test" finished-at="2021-03-21T07:11:36Z" duration-ms="3611">
-      <class name="testCases.UpdateEmployee">
-        <test-method is-config="true" signature="updateEmployee()[pri:0, instance:testCases.UpdateEmployee@31920ade]" started-at="2021-03-21T12:41:33Z" name="updateEmployee" finished-at="2021-03-21T12:41:36Z" duration-ms="3574" status="PASS">
+    <test started-at="2021-03-28T14:32:30Z" name="Default test" finished-at="2021-03-28T14:32:33Z" duration-ms="3638">
+      <class name="testCases.GetAllEmployees">
+        <test-method is-config="true" signature="getEmp()[pri:0, instance:testCases.GetAllEmployees@61eaec38]" started-at="2021-03-28T20:02:30Z" name="getEmp" finished-at="2021-03-28T20:02:33Z" duration-ms="3499" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateEmployee -->
-        <test-method signature="checkResponse()[pri:0, instance:testCases.UpdateEmployee@31920ade]" started-at="2021-03-21T12:41:36Z" name="checkResponse" finished-at="2021-03-21T12:41:36Z" duration-ms="11" status="PASS">
+        </test-method> <!-- getEmp -->
+        <test-method signature="checkHeaders()[pri:0, instance:testCases.GetAllEmployees@61eaec38]" started-at="2021-03-28T20:02:33Z" name="checkHeaders" finished-at="2021-03-28T20:02:33Z" duration-ms="58" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [HTTP/1.1 200 OK] but found [HTTP/1.1 429 Too Many Requests]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [HTTP/1.1 200 OK] but found [HTTP/1.1 429 Too Many Requests]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at org.testng.Assert.assertEquals(Assert.java:186)
+	at testCases.GetAllEmployees.checkStatusLine(GetAllEmployees.java:62)
+	at testCases.GetAllEmployees.checkHeaders(GetAllEmployees.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkHeaders -->
+        <test-method signature="checkResponse()[pri:0, instance:testCases.GetAllEmployees@61eaec38]" started-at="2021-03-28T20:02:33Z" name="checkResponse" finished-at="2021-03-28T20:02:33Z" duration-ms="34" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.apache.log4j.Logger.info(Object)" because "testCases.GetAllEmployees.log" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.log4j.Logger.info(Object)" because "testCases.GetAllEmployees.log" is null
+	at testCases.GetAllEmployees.checkResponseBody(GetAllEmployees.java:42)
+	at testCases.GetAllEmployees.checkResponse(GetAllEmployees.java:27)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkResponse -->
-      </class> <!-- testCases.UpdateEmployee -->
+      </class> <!-- testCases.GetAllEmployees -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

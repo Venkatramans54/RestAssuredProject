@@ -24,6 +24,7 @@ public class GetAllEmployees extends BaseClass {
 	
 	@Test
 	public void checkResponse() {
+		log.info("GetAllEmployees Test");
 		checkResponseBody();
 		checkStatusCode();
 		checkResponseTime();
@@ -37,13 +38,9 @@ public class GetAllEmployees extends BaseClass {
 		checkContentEnoding();
 	}
 	
-	@Test
-	public void checkCookies() {
-		checkCookieParams();
-	}
-	
 	public void checkResponseBody() {
 		String responseBody=response.getBody().asString();
+		log.info("Response Body=> "+responseBody);
 		System.out.println(response.getBody().asString());
 		Assert.assertTrue(responseBody!=null);
 	}
@@ -82,15 +79,6 @@ public class GetAllEmployees extends BaseClass {
 		String contentEncoding=response.header("Content-Encoding");
 		System.out.println("Content Encoding: "+contentEncoding);
 		Assert.assertEquals(contentEncoding, "gzip");
-	}
-	
-	public void checkCookieParams() {
-		System.out.println(response.getCookies().size());
-		Map<String, String> cookie=response.getCookies();
-		for(Map.Entry<String, String> entry:cookie.entrySet()) {
-			System.out.println(entry.getKey()+": "+entry.getValue());
-		}
-		Assert.assertTrue(!cookie.isEmpty());
 	}
 
 }

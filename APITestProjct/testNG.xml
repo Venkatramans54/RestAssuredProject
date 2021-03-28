@@ -8,6 +8,7 @@
 	<test name="EmployeeAPITest">
 		<classes>
 			<class name="testCases.GetAllEmployees" />
+			<class name="testCases.DataTest" />
 		</classes>
 	</test>
 </suite>

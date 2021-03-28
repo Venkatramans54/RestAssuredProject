@@ -3,12 +3,13 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="testCases.UpdateEmployee">
+      <class name="testCases.GetAllEmployees">
         <methods>
           <include name="checkResponse"/>
-          <include name="updateEmployee"/>
+          <include name="getEmp"/>
+          <include name="checkHeaders"/>
         </methods>
-      </class> <!-- testCases.UpdateEmployee -->
+      </class> <!-- testCases.GetAllEmployees -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

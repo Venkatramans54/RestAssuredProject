@@ -1,29 +1,32 @@
-package testCases;
+ package testCases;
+
+import java.util.HashMap;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import junit.framework.Assert;
 import utilities.BaseUtils;
+import utilities.DataProviderUtil;
 
 public class PostEmployee extends BaseClass {
 
 	String URI = "http://dummy.restapiexample.com/api/v1";
-	BaseUtils utils=new BaseUtils();
-	String name= utils.randName();
-	String salary= utils.randSalary();
-	String age=utils.randAge();
-	
 	
 	@BeforeClass
-	public void createEmployee() {
+	public void beforeTest() {
+		log.info("PostEmployees Test");
 		RestAssured.baseURI = URI;
+	}
+	
+	@Test(dataProviderClass = DataProviderUtil.class, dataProvider = "provide-data")
+	public void createEmployee(String name, String salary, String age) {
+		
 		httpRequest = RestAssured.given();
 		
 		JSONObject obj=new JSONObject();
@@ -35,10 +38,7 @@ public class PostEmployee extends BaseClass {
 		httpRequest.body(obj.toJSONString());
 		response=httpRequest.request(Method.POST,"/create");
 		System.out.println(response.getBody().asString());
-	}
-	
-	@Test
-	public void checkResponse() {
+		log.info("Response Body=> "+response.getBody().asString());
 		String responseBody=response.getBody().asString();
 		Assert.assertEquals(responseBody.contains(name), true);
 		Assert.assertEquals(responseBody.contains(salary), true);
